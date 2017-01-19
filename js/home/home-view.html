@@ -1,2 +1,8 @@
-<h1>Home View<h1>
+<h1>Home View</h1>
 <p>controller: {{message}}</p>
+
+<ul>
+  <li ng-repeat="film in films track by $index">
+    <a ui-sref="film({id: $index + 1})">{{film}}</a>
+  </li>
+</ul>

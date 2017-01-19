@@ -6,3 +6,8 @@
     <a ui-sref="film({id: $index + 1})">{{film}}</a>
   </li>
 </ul>
+
+<div>
+  <input type="text" ng-model="newFilm" />
+  <button ng-click="addNewFilm()">add film</button>
+</div>

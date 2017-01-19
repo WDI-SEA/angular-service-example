@@ -1,12 +1,18 @@
 angular.module("StarWarsApp")
 .service("FilmService", ["$http", function($http) {
+  var films = [
+    "A New Hope",
+    "The Empire Strikes Back",
+    "Return of the Jedi"
+  ];
+
   this.getFilms = function() {
-    return [
-      "A New Hope",
-      "The Empire Strikes Back",
-      "Return of the Jedi"
-    ];
+    return films;
   }
+
+  this.addFilm = function(name) {
+    films.push(name);
+  };
 
   this.getFilmDetails = function(i) {
     // using double equals because i came from

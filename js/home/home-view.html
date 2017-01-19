@@ -1,2 +1,15 @@
-<h1>Home View<h1>
+<h1>Home View</h1>
 <p>controller: {{message}}</p>
+
+<ul>
+  <li ng-repeat="film in films track by $index">
+    <a ui-sref="film({id: $index})">{{film.title}}</a>
+  </li>
+</ul>
+
+<!-- old "shopping cart" code.
+<div>
+  <input type="text" ng-model="newFilm" />
+  <button ng-click="addNewFilm()">add film</button>
+</div>
+-->

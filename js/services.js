@@ -9,7 +9,9 @@ angular.module("StarWarsApp")
   }
 
   this.getFilmDetails = function(i) {
-    if (i === 1) {
+    // using double equals because i came from
+    // the URL query parameters and it's a string.
+    if (i == 1) {
       return {
         year: 1977,
         title: "A New Hope",

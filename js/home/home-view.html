@@ -2,8 +2,8 @@
 <p>controller: {{message}}</p>
 
 <ul>
-  <li ng-repeat="film in films track by $index">
-    <a ui-sref="film({id: $index + 1})">{{film}}</a>
+  <li ng-repeat="film in films">
+    <a ui-sref="film({id: film.id})">{{film.title}}</a>
   </li>
 </ul>
 

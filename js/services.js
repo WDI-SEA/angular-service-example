@@ -7,7 +7,17 @@ angular.module("StarWarsApp")
   ];
 
   this.getFilms = function() {
-    return films;
+    var req = {
+      url: 'http://swapi.co/api/films/',
+      method: 'GET',
+    }
+    return $http(req).then(function(res) {
+      console.log("RESULTS", res);
+      if (res.status !== 200) {
+        return [];
+      }
+      return res.data.results;
+    });
   }
 
   this.addFilm = function(name) {

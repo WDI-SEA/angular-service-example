@@ -1,10 +1,13 @@
 angular.module("StarWarsApp")
 .service("FilmService", ["$http", function($http) {
-  var films = [
-    "A New Hope",
-    "The Empire Strikes Back",
-    "Return of the Jedi"
-  ];
+  // This doesn't interact with the API.
+  // this was here to demonstrate how services can accumulate
+  // and persist data between page navigation, like shopping carts.
+  // var films = [
+  //   "A New Hope",
+  //   "The Empire Strikes Back",
+  //   "Return of the Jedi"
+  // ];
 
   this.getFilms = function() {
     var req = {
@@ -20,9 +23,10 @@ angular.module("StarWarsApp")
     });
   }
 
-  this.addFilm = function(name) {
-    films.push(name);
-  };
+  // Old "shopping cart" code
+  // this.addFilm = function(name) {
+  //   films.push(name);
+  // };
 
   this.getFilmDetails = function(i) {
     // using double equals because i came from

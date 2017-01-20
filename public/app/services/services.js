@@ -15,7 +15,7 @@ angular.module("StarWarsApp")
       method: 'GET',
     }
     return $http(req).then(function(res) {
-      console.log("RESULTS", res);
+      // console.log("RESULTS", res);
       if (res.status !== 200) {
         return [];
       }
@@ -31,18 +31,15 @@ angular.module("StarWarsApp")
   this.getFilmDetails = function(i) {
     // using double equals because i came from
     // the URL query parameters and it's a string.
-    if (i == 1) {
-      return {
-        year: 1977,
-        title: "A New Hope",
-        plot: "bla bla bla bla blb alba"
-      }
-    } else {
-      return {
-        year: 1977,
-        title: "Other film",
-        plot: "yadda yadda yadda yadda"
-      }
+    var req = {
+      url: 'http://swapi.co/api/films/' + i,
+      method: 'GET',
     }
+    return $http(req).then(function(res) {
+      if (res.status !== 200) {
+        return [];
+      }
+      return res.data;
+    });
   }
 }]);

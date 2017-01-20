@@ -15,5 +15,5 @@ angular.module("StarWarsApp", ['ui.router'])
       url: '/film/:id',
       templateUrl: 'js/film-detail/film-detail-view.html',
       controller: 'FilmCtrl'
-    })
+    });
   }]);

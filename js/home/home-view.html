@@ -1,9 +1,9 @@
 <h1>Home View</h1>
-<p>controller: {{message}}</p>
+<p>controller: {{homeComp.message}}</p>
 
 <ul>
-  <li ng-repeat="film in films">
-    <a ui-sref="film({id: film.id})">{{film.title}}</a>
+  <li ng-repeat="film in homeComp.films">
+    <a ui-sref="film({id: film.episode_id})">{{film.title}}</a>
   </li>
 </ul>
 
